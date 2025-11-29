@@ -21,3 +21,10 @@ Poner en tostadas al principio que puede ser
 Poner una seccion de bebidas con subtitulos
     Refrescos, Cervezas, etc
 
+Poner en cafe que tipos de leche hay:
+    Almendra, sin lactosa y entera.
+
+En la de dulces, para los crepes por ejemplo 
+    poner un desplegable y que abajo salgan 
+    los tipos con precio
+
