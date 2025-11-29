@@ -1,0 +1,46 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url('img/header-background.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.header-article {
+    display: flex;
+}
+.header-article .logo {
+    width: 70px;
+    height: auto;
+    margin-right: 20px;
+}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.lang-nav ul {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.flag-icon {
+    width: 30px;
+}
