@@ -5,7 +5,8 @@
     --background-color: #fdfbf7;
 
     --text-color: #2c2c2c;
-/* IMPORTANTE PONER FONTS PARA HEADING Y BODY */
+    --font-heading: 'DM Serif Display', serif;
+    --font-body: 'Out', sans-serif;
     --shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
 }
 * {
@@ -18,7 +19,7 @@ body {
     min-height: 100vh;
     display: grid;
     grid-template-rows: auto 1fr auto;
-    /* IMPORTANTE PONER FONT FAMILY */
+    font-family: var(--font-body);
     background-color: var(--background-color);
     color: #333;
 }
@@ -41,7 +42,7 @@ header .logo {
 }
 
 header h1 {
-    /* IMPORTANTE PONER FONT FAMILY */
+    font-family: var(--font-heading);
     margin: 0;
     font-size: 1.8rem;
 }
@@ -110,7 +111,7 @@ details[open] {
 }
 
 summary {
-    /* IMPORTANTE FONT FAMILY */
+    font-family: var(--font-heading);
     padding: 18px 20px;
     cursor: pointer;
     font-size: 1.5rem;
@@ -131,7 +132,7 @@ summary::webkit-details-marker {
 
 summary::after {
     content: '+';
-    /* IMPORTANTE FONT FAMILY */
+    font-family: var(--font-heading);
     color: var(--primary-color);
     font-weight: bolder;
     font-size: 1.7rem;
@@ -144,22 +145,141 @@ details[open] summary::after {
     transform: rotate(180deg);
 }
 
-.category  {
+.big-category, .mid-category, .small-category {
     padding: 15px;
     background-color: #fff;
 }
 
-#dulces article {
+.allergens { 
+    display: flex; 
+    gap: 5px; 
+    margin-top: 8px; 
+    flex-wrap: wrap; 
+}
+
+.food-allergen {
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: 700;
+    border: 1px solid #ddd;
+    color: #888;
+    background-color: #f9f9f9;
+}
+
+.food-allergen.gluten { 
+    border-color: #d4a373; 
+    color: #8c6b4a; 
+    background: #fffbf5; 
+
+}
+.food-allergen.lacteos { 
+    border-color: #a4c2f4; 
+    color: #4a6b8c; 
+    background: #f0f7ff; 
+}
+
+.food-allergen.huevos { 
+    border-color: #ffe599; 
+    color: #b59000; 
+    background: #fffdf0; 
+}
+
+.food-allergen.sesamo { border-color: #aaa; 
+    color: #555; 
+    background: #eee; 
+}
+
+.big-category article {
     background: var(--background-color);
     border-radius: 12px;
-    
     overflow: hidden;
-    margin: 20px;
+    margin-bottom: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    border: 1px solid #f0f0f0f0;
 }
-#dulces article img{
+.big-category article img{
     width: 100%;
     height: 200px;
     object-fit: cover;
     display: block;
+}
+
+.product-info {
+    padding: 15px;
+}
+
+.big-category article .prod-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.big-category article .prod-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    font-family: var(--font-heading);
+    margin: 0;
+}
+.big-category article .prod-price {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--secondary-color);
+    font-family: var(--font-body);
+}
+.big-category article .prod-desc {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.4;
+}
+
+
+
+
+.mid-category article {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px dashed #e0e0e0;
+}
+
+.mid-category article:last-child {
+    border-bottom: none;
+}
+
+
+
+
+.mid-category article .prod-title {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 2px;
+}
+
+
+.mid-category article .prod-desc {
+     font-size: 0.85rem; 
+     color: #777; 
+     line-height: 1.3;
+}
+
+.mid-category article .prod-price {
+    font-weight: 700; 
+    color: var(--secondary); 
+    font-size: 1.05rem; 
+    margin-top: 5px; 
+    display: block;
+}
+
+.mid-category article img{
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    object-fit: cover;
+    flex-shrink: 0;
+    background-color: #eee;
 }
