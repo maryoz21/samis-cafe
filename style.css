@@ -343,3 +343,24 @@ details[open] summary::after {
     margin-top: 5px;
     margin-bottom: 5px;
 }
+
+/* NESTED DETAILS FOR CREPES */
+details details {
+    box-shadow: none;
+    margin: 10px 0;
+    background: transparent;
+}
+
+details summary.nested-summary {
+    background: #fff;
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+    padding: 12px 15px;
+    border: 1px solid var(--terciary-color);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+details summary.nested-summary::after {
+    font-size: 1.3rem;
+}

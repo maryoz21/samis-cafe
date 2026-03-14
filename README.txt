@@ -1,8 +1,10 @@
 ORDEN DEL MENU
 1. DULCES(imagen grande encima del texto)
-2. TOSTADAS(imagen pequeña a la derecha del texto)
-3. CAFES(imagen pequeña a la derecha del texto)
-4. MENU TES(enlace a otro menu)
+2. TOSTADAS
+    - Normales(sin imagen)
+    -Rustica(imagen pequeña a la derecha)
+3. CAFES(sin imagen)
+4. TES(sin imagen)
 5. Refrescos / Cervezas(sin imagen, 
     solo nombre y precio por filas)
 
@@ -28,3 +30,5 @@ En la de dulces, para los crepes por ejemplo
     poner un desplegable y que abajo salgan 
     los tipos con precio
 
+
+A las tostada de pan rustico añadir descripcion con lo que lleva
