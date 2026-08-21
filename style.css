@@ -221,6 +221,14 @@ main {
     margin: 0 0 26px;
 }
 
+.cat-note {
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-size: 14px;
+    color: var(--espresso-soft);
+    margin: -10px 0 24px;
+}
+
 /* --- ITEMS (con leader punteado) --- */
 .content-box {
     display: flex;
@@ -269,6 +277,27 @@ main {
     color: var(--rust-dark);
     white-space: nowrap;
 }
+
+/* --- ALÉRGENOS --- */
+.allergens { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 6px; }
+.allergen {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: .03em;
+    text-transform: uppercase;
+    line-height: 1.2;
+    padding: 3px 5px;
+    border-radius: 3px;
+    border: 1.5px solid;
+    background: var(--paper);
+    white-space: nowrap;
+}
+.allergen.gluten { border-color: #C0392B; color: #C0392B; }
+.allergen.lacteos { border-color: #2E6DA4; color: #2E6DA4; }
+.allergen.huevo { border-color: #9C7A2E; color: #9C7A2E; }
+.allergen.frutos-secos { border-color: var(--rust-dark); color: var(--rust-dark); }
+.allergen.pescado { border-color: #2E8B7A; color: #2E8B7A; }
 
 /* Listas de precio uniforme en cuadrícula (Té, Bebidas frías, Galletas...) */
 .content-box.grid-list {
@@ -336,6 +365,7 @@ main {
     padding-top: 10px;
     margin-top: 4px;
 }
+.big-info .allergens { margin-top: 10px; }
 
 @media (min-width: 700px) {
     .card-big img {

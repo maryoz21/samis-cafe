@@ -20,6 +20,15 @@
         return precio.toFixed(2).replace(".", ",") + "€";
     }
 
+    function renderAlergenos(alergenos) {
+        if (!alergenos || !alergenos.length) return "";
+        const chips = alergenos.map(function (a) {
+            const etiqueta = (allergenLabels && allergenLabels[a]) || a;
+            return '<span class="allergen ' + a + '">' + etiqueta + "</span>";
+        }).join("");
+        return '<div class="allergens">' + chips + "</div>";
+    }
+
     function crearItemFoto(item) {
         const el = document.createElement("article");
         el.className = "card-big";
@@ -32,6 +41,7 @@
         if (item.descripcion) {
             html += '<div class="big-desc">' + item.descripcion + "</div>";
         }
+        html += renderAlergenos(item.alergenos);
         html += "</div>";
         el.innerHTML = html;
         return el;
@@ -45,6 +55,7 @@
                 '<div class="item-main">' +
                     '<span class="item-name">' + item.nombre + "</span>" +
                     (item.descripcion ? '<span class="item-desc">' + item.descripcion + "</span>" : "") +
+                    renderAlergenos(item.alergenos) +
                 "</div>" +
                 '<span class="item-price">' + formatPrecio(item.precio) + "</span>" +
             "</div>";
@@ -60,6 +71,7 @@
             '<div class="item-main">' +
                 '<span class="item-name">' + item.nombre + "</span>" +
                 (item.descripcion ? '<span class="item-desc">' + item.descripcion + "</span>" : "") +
+                renderAlergenos(item.alergenos) +
             "</div>" +
             '<span class="leader"></span>' +
             '<span class="item-price">' + formatPrecio(item.precio) + "</span>";
@@ -98,6 +110,13 @@
         const rule = document.createElement("div");
         rule.className = "cat-rule";
         section.appendChild(rule);
+
+        if (typeof categoryNotes !== "undefined" && categoryNotes[key]) {
+            const note = document.createElement("p");
+            note.className = "cat-note";
+            note.textContent = categoryNotes[key];
+            section.appendChild(note);
+        }
 
         const contentBox = document.createElement("div");
         const esBoard = !!boardCategories[key];

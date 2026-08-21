@@ -77,49 +77,49 @@ const menuData = {
   ],
 
   tostadasPanRustico: [
-    { nombre: "Mediterran", descripcion: "Ziegenkäse, Honig und Walnüsse", precio: 6.00, imagen: "img/platos/tostada_mediterranea.jpg" },
-    { nombre: "Serrano Grün", descripcion: "Tomate, Avocado und Serrano-Schinken", precio: 4.50 },
-    { nombre: "Nordisch Deluxe", descripcion: "Lachs, Frischkäse und Rucola", precio: 5.00 },
-    { nombre: "Rustikaler Geschmack", descripcion: "Tomate, Rührei und Serrano-Schinken", precio: 6.00 },
-    { nombre: "Burrata & Beeren", descripcion: "Hauch von Pesto, Feldsalat, Burrata und rote Beeren", precio: 6.00, imagen: "img/platos/tostada_burrata_y_berries.jpg" },
-    { nombre: "Süße Versuchung", descripcion: "Nutella, Erdbeeren, Banane und Haselnusscreme", precio: 7.00 },
-    { nombre: "Die Saison", descripcion: "Frischkäse, Feigen oder Granatapfel (je nach Saison), Serrano-Schinken, Feta-Käse und Feldsalat", precio: 8.00 }
+    { nombre: "Mediterran", descripcion: "Ziegenkäse, Honig und Walnüsse", precio: 6.00, imagen: "img/platos/tostada_mediterranea.jpg", alergenos: ["gluten", "lacteos", "frutos-secos"] },
+    { nombre: "Serrano Grün", descripcion: "Tomate, Avocado und Serrano-Schinken", precio: 4.50, alergenos: ["gluten"] },
+    { nombre: "Nordisch Deluxe", descripcion: "Lachs, Frischkäse und Rucola", precio: 5.00, alergenos: ["gluten", "lacteos", "pescado"] },
+    { nombre: "Rustikaler Geschmack", descripcion: "Tomate, Rührei und Serrano-Schinken", precio: 6.00, alergenos: ["gluten", "huevo"] },
+    { nombre: "Burrata & Beeren", descripcion: "Hauch von Pesto, Feldsalat, Burrata und rote Beeren", precio: 6.00, imagen: "img/platos/tostada_burrata_y_berries.jpg", alergenos: ["gluten", "lacteos", "frutos-secos"] },
+    { nombre: "Süße Versuchung", descripcion: "Nutella, Erdbeeren, Banane und Haselnusscreme", precio: 7.00, alergenos: ["gluten", "lacteos", "frutos-secos"] },
+    { nombre: "Die Saison", descripcion: "Frischkäse, Feigen oder Granatapfel (je nach Saison), Serrano-Schinken, Feta-Käse und Feldsalat", precio: 8.00, alergenos: ["gluten", "lacteos"] }
   ],
 
   brunchs: [
-    { nombre: "Eggs Benedict", descripcion: "Brioche-Brot, Avocado, Bacon, pochiertes Ei und Sauce Hollandaise", precio: 11.00 },
-    { nombre: "Amerikanisches Frühstück", descripcion: "Rustikaler Brot-Toast, Rührei, Bacon und Avocado", precio: 10.00, imagen: "img/platos/brunch_desayuno_americano.jpg" },
-    { nombre: "Bagel Supreme", descripcion: "Bagel-Brot, Cheddar-Käse, Avocado, Pute, Rucola und Spiegel- oder Rührei", precio: 10.00, imagen: "img/platos/brunch_bagel_supreme.jpg" },
-    { nombre: "Supreme Lachs", descripcion: "Bagel-Brot, Frischkäse, Feldsalat, Lachs, Avocado und Sprossen", precio: 12.00 },
-    { nombre: "Der Zerzupfte", descripcion: "Burger-Brötchen, geschmorte Rinderbacke, Cheddar-Käse und Honig-Senf-Sauce", precio: 12.00 }
+    { nombre: "Eggs Benedict", descripcion: "Brioche-Brot, Avocado, Bacon, pochiertes Ei und Sauce Hollandaise", precio: 11.00, alergenos: ["gluten", "huevo", "lacteos"] },
+    { nombre: "Amerikanisches Frühstück", descripcion: "Rustikaler Brot-Toast, Rührei, Bacon und Avocado", precio: 10.00, imagen: "img/platos/brunch_desayuno_americano.jpg", alergenos: ["gluten", "huevo"] },
+    { nombre: "Bagel Supreme", descripcion: "Bagel-Brot, Cheddar-Käse, Avocado, Pute, Rucola und Spiegel- oder Rührei", precio: 10.00, imagen: "img/platos/brunch_bagel_supreme.jpg", alergenos: ["gluten", "lacteos", "huevo"] },
+    { nombre: "Supreme Lachs", descripcion: "Bagel-Brot, Frischkäse, Feldsalat, Lachs, Avocado und Sprossen", precio: 12.00, alergenos: ["gluten", "lacteos", "pescado"] },
+    { nombre: "Der Zerzupfte", descripcion: "Burger-Brötchen, geschmorte Rinderbacke, Cheddar-Käse und Honig-Senf-Sauce", precio: 12.00, alergenos: ["gluten", "lacteos"] }
   ],
 
   crepesSalados: [
-    { nombre: "Der Supreme", descripcion: "Avocado, Frischkäse und Lachs", precio: 9.00, imagen: "img/platos/crepe_salado_el_supremo.jpg" },
-    { nombre: "Sami's Creps", descripcion: "Avocado, Hähnchen, Bacon, Honig-Senf", precio: 9.00 },
-    { nombre: "Basic", descripcion: "Gekochter Schinken oder Pute, Käsescheiben, Honig (optional)", precio: 3.00 }
+    { nombre: "Der Supreme", descripcion: "Avocado, Frischkäse und Lachs", precio: 9.00, imagen: "img/platos/crepe_salado_el_supremo.jpg", alergenos: ["gluten", "lacteos", "pescado"] },
+    { nombre: "Sami's Creps", descripcion: "Avocado, Hähnchen, Bacon, Honig-Senf", precio: 9.00, alergenos: ["gluten"] },
+    { nombre: "Basic", descripcion: "Gekochter Schinken oder Pute, Käsescheiben, Honig (optional)", precio: 3.00, alergenos: ["gluten", "lacteos"] }
   ],
 
   tablasParaCompartir: [
-    { nombre: "Sami's Freunde-Platte", descripcion: "Avocado, Lachs, Rührei, Käse, Serrano-Schinken, geriebene Tomate, Butter, Croissants, Pfannkuchen, Marmelade, Orangensaft, griechischer Joghurt und Brot", precio: 25.00 },
-    { nombre: "Großer Serrano", descripcion: "Rustikaler Brot-Toast, Serrano-Schinken, Rührei mit einem Hauch Parmesan, verschiedene Käsesorten, iberische Wurstwaren und geriebene Tomate", precio: 15.00 },
-    { nombre: "Super Mediterrane Platte", descripcion: "Käse (gereift, Manchego, Parmesan, halbgereift, Brie, Camembert und Trüffel), Wurstwaren (Serrano-Schinken, Salchichón, Lendenwurst, milder Chorizo), dazu rustikales Brot, Breadsticks, gemischte Nüsse und Oliven, süße Note von Trauben, Feigen und Saisonfrucht, extra 70%ige dunkle Schokolade", precio: 35.00 },
-    { nombre: "Die Käseroute", descripcion: "Halbgereifter Käse, gereifter Ziegenkäse, Rosmarinkäse, Trüffelkäse, fruchtige Käsesorten, dazu Baguette, Cracker und Marmelade", precio: 18.00 },
-    { nombre: "Die Schinkenauswahl", descripcion: "Auswahl an iberischem Schinken, Lendenwurst, Chorizo, Salchichón, dazu rustikales Brot und Breadsticks", precio: 15.00 }
+    { nombre: "Sami's Freunde-Platte", descripcion: "Avocado, Lachs, Rührei, Käse, Serrano-Schinken, geriebene Tomate, Butter, Croissants, Pfannkuchen, Marmelade, Orangensaft, griechischer Joghurt und Brot", precio: 25.00, alergenos: ["gluten", "lacteos", "huevo", "pescado"] },
+    { nombre: "Großer Serrano", descripcion: "Rustikaler Brot-Toast, Serrano-Schinken, Rührei mit einem Hauch Parmesan, verschiedene Käsesorten, iberische Wurstwaren und geriebene Tomate", precio: 15.00, alergenos: ["gluten", "huevo", "lacteos"] },
+    { nombre: "Super Mediterrane Platte", descripcion: "Käse (gereift, Manchego, Parmesan, halbgereift, Brie, Camembert und Trüffel), Wurstwaren (Serrano-Schinken, Salchichón, Lendenwurst, milder Chorizo), dazu rustikales Brot, Breadsticks, gemischte Nüsse und Oliven, süße Note von Trauben, Feigen und Saisonfrucht, extra 70%ige dunkle Schokolade", precio: 35.00, alergenos: ["gluten", "lacteos", "frutos-secos"] },
+    { nombre: "Die Käseroute", descripcion: "Halbgereifter Käse, gereifter Ziegenkäse, Rosmarinkäse, Trüffelkäse, fruchtige Käsesorten, dazu Baguette, Cracker und Marmelade", precio: 18.00, alergenos: ["gluten", "lacteos"] },
+    { nombre: "Die Schinkenauswahl", descripcion: "Auswahl an iberischem Schinken, Lendenwurst, Chorizo, Salchichón, dazu rustikales Brot und Breadsticks", precio: 15.00, alergenos: ["gluten"] }
   ],
 
   croissants: [
-    { nombre: "Lotus Dream", descripcion: "Gefüllt mit Lotus-Creme, Banane, Sahne und Lotus-Keksen", precio: 5.00, imagen: "img/platos/croissant_lotus_dream.jpg" },
-    { nombre: "Weiß & Grün", descripcion: "Pistazie und weiße Schokolade", precio: 5.00 },
-    { nombre: "Sami's Paris", descripcion: "Konditorcreme und rote Beeren", precio: 5.00 },
-    { nombre: "Gefüllte Croissants", descripcion: "Schokolade, weiße Schokolade, Kinder-Creme", precio: 1.50 }
+    { nombre: "Lotus Dream", descripcion: "Gefüllt mit Lotus-Creme, Banane, Sahne und Lotus-Keksen", precio: 5.00, imagen: "img/platos/croissant_lotus_dream.jpg", alergenos: ["gluten", "lacteos"] },
+    { nombre: "Weiß & Grün", descripcion: "Pistazie und weiße Schokolade", precio: 5.00, alergenos: ["gluten", "lacteos", "frutos-secos"] },
+    { nombre: "Sami's Paris", descripcion: "Konditorcreme und rote Beeren", precio: 5.00, alergenos: ["gluten", "lacteos", "huevo"] },
+    { nombre: "Gefüllte Croissants", descripcion: "Schokolade, weiße Schokolade, Kinder-Creme", precio: 1.50, alergenos: ["gluten", "lacteos"] }
   ],
 
   crepesDulces: [
-    { nombre: "Die Königin", descripcion: "Nutella", precio: 3.50, imagen: "img/platos/crepe_la_reina.jpg" },
-    { nombre: "Choco Berry Bliss", descripcion: "Nutella, Erdbeeren, Banane, Sahne und Haselnüsse", precio: 6.00 },
-    { nombre: "Sweet Velvet", descripcion: "Frischkäse, rote Beeren und Honig", precio: 6.00, imagen: "img/platos/crepe_sweet_velvet.jpg" },
-    { nombre: "Süßes Paradies", descripcion: "Rote Beeren, Kiwi, Orange und Nutella", precio: 6.00 },
+    { nombre: "Die Königin", descripcion: "Nutella", precio: 3.50, imagen: "img/platos/crepe_la_reina.jpg", alergenos: ["gluten", "lacteos"] },
+    { nombre: "Choco Berry Bliss", descripcion: "Nutella, Erdbeeren, Banane, Sahne und Haselnüsse", precio: 6.00, alergenos: ["gluten", "lacteos", "frutos-secos"] },
+    { nombre: "Sweet Velvet", descripcion: "Frischkäse, rote Beeren und Honig", precio: 6.00, imagen: "img/platos/crepe_sweet_velvet.jpg", alergenos: ["gluten", "lacteos"] },
+    { nombre: "Süßes Paradies", descripcion: "Rote Beeren, Kiwi, Orange und Nutella", precio: 6.00, alergenos: ["gluten", "lacteos"] },
     { nombre: "Extra: Kugel Eis", precio: 1.50 },
     { nombre: "Extra: Karamell", precio: 0.50 },
     { nombre: "Extra: Erdbeeren", precio: 0.50 },
@@ -127,20 +127,20 @@ const menuData = {
   ],
 
   tartas: [
-    { nombre: "Red-Velvet-Kuchen", precio: 4.50, imagen: "img/platos/tarta_red_velvet.jpg" },
-    { nombre: "Käsekuchen", precio: 4.50 },
-    { nombre: "Pistazien-Käsekuchen", precio: 4.50 },
-    { nombre: "Karottenkuchen", precio: 4.50 },
-    { nombre: "Tiramisu", precio: 5.00 }
+    { nombre: "Red-Velvet-Kuchen", precio: 4.50, imagen: "img/platos/tarta_red_velvet.jpg", alergenos: ["gluten", "lacteos", "huevo"] },
+    { nombre: "Käsekuchen", precio: 4.50, alergenos: ["gluten", "lacteos", "huevo"] },
+    { nombre: "Pistazien-Käsekuchen", precio: 4.50, alergenos: ["gluten", "lacteos", "huevo", "frutos-secos"] },
+    { nombre: "Karottenkuchen", precio: 4.50, alergenos: ["gluten", "lacteos", "huevo", "frutos-secos"] },
+    { nombre: "Tiramisu", precio: 5.00, alergenos: ["gluten", "lacteos", "huevo"] }
   ],
 
   galletasNewYork: [
-    { nombre: "Lotus", precio: 3.50 },
-    { nombre: "Red Velvet", precio: 3.50 },
-    { nombre: "Schokolade", precio: 2.50, imagen: "img/platos/galleta_chocolate.jpg" },
-    { nombre: "Weiße Schokolade", precio: 2.50 },
-    { nombre: "Pistazie", precio: 3.50 },
-    { nombre: "Oreo", precio: 3.50 }
+    { nombre: "Lotus", precio: 3.50, alergenos: ["gluten", "lacteos", "huevo"] },
+    { nombre: "Red Velvet", precio: 3.50, alergenos: ["gluten", "lacteos", "huevo"] },
+    { nombre: "Schokolade", precio: 2.50, imagen: "img/platos/galleta_chocolate.jpg", alergenos: ["gluten", "lacteos", "huevo"] },
+    { nombre: "Weiße Schokolade", precio: 2.50, alergenos: ["gluten", "lacteos", "huevo"] },
+    { nombre: "Pistazie", precio: 3.50, alergenos: ["gluten", "lacteos", "huevo", "frutos-secos"] },
+    { nombre: "Oreo", precio: 3.50, alergenos: ["gluten", "lacteos", "huevo"] }
   ]
 };
 
@@ -168,4 +168,19 @@ const groupLabels = {
   bebidas: "getränke",
   desayunos: "frühstück",
   dulces: "süßes"
+};
+
+// Hinweise unter dem Titel bestimmter Kategorien
+const categoryNotes = {
+  cafes: "Alle Kaffees können mit Mandelmilch, laktosefreier Milch oder Vollmilch bestellt werden.",
+  tostadasBasicas: "Wähle Weißbrot oder Vollkorn-Samenbrot. Alle Toasts enthalten Gluten."
+};
+
+// Bezeichnungen der Allergene, die in den Gerichten verwendet werden
+const allergenLabels = {
+  gluten: "Gluten",
+  lacteos: "Milch",
+  huevo: "Ei",
+  "frutos-secos": "Nüsse",
+  pescado: "Fisch"
 };
