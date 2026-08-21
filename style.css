@@ -1,68 +1,96 @@
 :root {
-    --primary-color: #000000;
-    --secondary-color: #8c6b4a;
-    --terciary-color: #d4a373;
-    --background-color: #fdfbf7;
+    --cream: #F2E7D8;
+    --cream-light: #FBF5EA;
+    --paper: #FFFCF7;
+    --espresso: #3A2A1D;
+    --espresso-soft: #7A6650;
+    --rust: #AE5A2A;
+    --rust-dark: #8C4620;
+    --gold: #C79A44;
+    --line: rgba(58, 42, 29, 0.16);
+    --line-strong: rgba(58, 42, 29, 0.28);
 
-    --text-color: #2c2c2c;
-    --font-heading: 'DM Serif Display', serif;
-    --font-body: 'Out', sans-serif;
-    --shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    --font-heading: 'Fraunces', serif;
+    --font-mono: 'Space Mono', monospace;
+    --font-body: 'Work Sans', sans-serif;
 }
+
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
 }
 
-body {
-    min-height: 100vh;
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-    font-family: var(--font-body);
-    background-color: var(--background-color);
-    color: #333;
+html {
+    scroll-behavior: smooth;
 }
 
-/* HEADER */
+body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--espresso);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+    background: var(--rust);
+    color: var(--paper);
+}
+
+/* Textura de fondo */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: radial-gradient(circle at 1px 1px, rgba(58, 42, 29, 0.05) 1px, transparent 1px);
+    background-size: 18px 18px;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.wrap {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 0 24px;
+    position: relative;
+    z-index: 1;
+}
+
+/* --- HEADER (negro, con logo y banderas) --- */
 header {
-    background-color: var(--primary-color);
-    color: var(--terciary-color);
-    padding: 1.5rem 1rem;
-    text-align: center;
+    background: #000;
     position: sticky;
     top: 0;
-    z-index: 100;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    z-index: 30;
+    padding: 20px 20px 16px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 header .logo {
-    width: 100px;
+    display: block;
+    margin: 0 auto;
+    height: 64px;
+    width: auto;
     border-radius: 50%;
 }
 
-header h1 {
-    font-family: var(--font-heading);
-    margin: 0;
-    font-size: 1.8rem;
+header .header-tagline {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin: 10px 0 0;
 }
 
-header p {
-    font-size: 0.8rem;
-    opacity: 0.8;
-    margin-top: 2px;
-    letter-spacing: 1px;
-}
-
-/* LANGUAGE SELECTOR */
-
-.lang-nav {
+/* --- SELECTOR DE IDIOMAS --- */
+.lang-selector {
     position: absolute;
-    top: 15px;
-    right: 15px;
+    top: 16px;
+    right: 18px;
     display: flex;
     gap: 10px;
-    z-index: 1000;
+    z-index: 30;
 }
 
 .lang-link {
@@ -73,294 +101,288 @@ header p {
 }
 
 .lang-link img {
-    width: 28px;
-    height: 28px;
+    width: 26px;
+    height: 26px;
     border-radius: 50%;
     object-fit: cover;
     border: 2px solid transparent;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
 }
 
 .lang-link:hover {
-transform: scale(1.1);
+    transform: scale(1.1);
 }
 
 .lang-link.active img {
-    border-color: var(--terciary-color);
-    transform: scale(1.1);
-    box-shadow: 0 0 8px rgba(212, 163, 115, 0.6);
+    border-color: var(--gold);
+    box-shadow: 0 0 0 2px #000, 0 0 8px rgba(199, 154, 68, 0.6);
 }
 
-main {
-    max-width: 600px;
-    margin: 25px auto;
-    padding: 0 15px;
+/* --- NAV STICKY --- */
+.nav-outer {
+    position: sticky;
+    top: var(--header-height, 96px);
+    z-index: 20;
+    background: linear-gradient(var(--cream) 78%, transparent);
+    padding: 14px 0 22px;
 }
 
-details {
-    background-color: var(--terciary-color);
-    margin-bottom: 15px;
-    border-radius: 12px;
-    box-shadow: var(--shadow);
-    overflow: hidden;
-    transition: box-shadow 0.3s ease;
-}
-
-details[open] {
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-}
-
-summary {
-    font-family: var(--font-heading);
-    padding: 18px 20px;
-    cursor: pointer;
-    font-size: 1.5rem;
-    color: var(--primary-color);
-    list-style: none;
+.category-nav {
     display: flex;
-    justify-content: space-between;
-    gap: 100px;
-    align-items: center;
-    background: var(---color);
-    user-select: none;
-    
+    gap: 8px;
+    overflow-x: auto;
+    padding: 6px 24px;
+    max-width: 920px;
+    margin: 0 auto;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
 }
 
-summary::webkit-details-marker {
+.category-nav::-webkit-scrollbar {
     display: none;
 }
 
-summary::after {
-    content: '+';
-    font-family: var(--font-heading);
-    color: var(--primary-color);
-    font-weight: bolder;
-    font-size: 1.7rem;
-    transition: transform 0.3s;
-}
-
-details[open] summary::after {
-    content: '-';
-    color: var(--primary-color);
-    transform: rotate(180deg);
-}
-
-.big-category, .mid-category, .small-category {
-    padding: 15px;
-    background-color: #fff;
-}
-
-.allergens { 
-    display: flex; 
-    gap: 5px; 
-    margin-top: 8px; 
-    flex-wrap: wrap; 
-}
-
-.food-allergen {
-    font-size: 0.6rem;
+.nav-tab {
+    flex: 0 0 auto;
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    letter-spacing: .03em;
     text-transform: uppercase;
-    padding: 2px 6px;
-    border-radius: 4px;
-    font-weight: 700;
-    border: 1px solid #ddd;
-    color: #888;
-    background-color: #f9f9f9;
+    color: var(--espresso-soft);
+    background: var(--cream-light);
+    border: 1px solid var(--line);
+    padding: 8px 14px;
+    border-radius: 100px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all .2s ease;
+    text-decoration: none;
 }
 
-.food-allergen.gluten { 
-    border-color: #d4a373; 
-    color: #8c6b4a; 
-    background: #fffbf5; 
-
-}
-.food-allergen.lacteos { 
-    border-color: #a4c2f4; 
-    color: #4a6b8c; 
-    background: #f0f7ff; 
+.nav-tab:hover {
+    border-color: var(--rust);
+    color: var(--rust-dark);
 }
 
-.food-allergen.huevos { 
-    border-color: #ffe599; 
-    color: #b59000; 
-    background: #fffdf0; 
+.nav-tab.active {
+    background: var(--espresso);
+    border-color: var(--espresso);
+    color: var(--cream-light);
 }
 
-.food-allergen.sesamo { border-color: #aaa; 
-    color: #555; 
-    background: #eee; 
-}
-
-.big-category article {
-    background: var(--background-color);
-    border-radius: 12px;
-    overflow: hidden;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    border: 1px solid #f0f0f0f0;
-}
-.big-category article img{
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
+/* --- ESTRUCTURA PRINCIPAL --- */
+main {
     display: block;
 }
 
-.product-info {
-    padding: 15px;
+.group-title {
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-size: 15px;
+    color: var(--rust);
+    text-align: center;
+    margin: 56px 0 6px;
 }
 
-.big-category article .prod-header {
+.group-title:first-of-type {
+    margin-top: 12px;
+}
+
+.menu-category {
+    padding: 38px 0 6px;
+    scroll-margin-top: calc(var(--header-height, 96px) + 90px);
+}
+
+.cat-head {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    margin-bottom: 22px;
+}
+
+.cat-num {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--gold);
+}
+
+.cat-title {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: clamp(26px, 5vw, 34px);
+    margin: 0;
+    flex: 1;
+    color: var(--espresso);
+}
+
+.cat-rule {
+    height: 1px;
+    background: var(--line-strong);
+    margin: 0 0 26px;
+}
+
+/* --- ITEMS (con leader punteado) --- */
+.content-box {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.item {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+}
+
+.item-main {
+    flex: 1;
+    min-width: 0;
+}
+
+.item-name {
+    font-weight: 600;
+    font-size: 16.5px;
+    color: var(--espresso);
+}
+
+.item-desc {
+    display: block;
+    font-size: 14px;
+    color: var(--espresso-soft);
+    margin-top: 3px;
+    line-height: 1.45;
+}
+
+.leader {
+    flex: 0 1 auto;
+    min-width: 16px;
+    border-bottom: 1.5px dotted var(--line-strong);
+    position: relative;
+    top: -4px;
+    margin: 0 2px;
+}
+
+.item-price {
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--rust-dark);
+    white-space: nowrap;
+}
+
+/* Listas de precio uniforme en cuadrícula (Té, Bebidas frías, Galletas...) */
+.content-box.grid-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px 28px;
+}
+
+@media (min-width: 700px) {
+    .content-box.grid-list {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* --- FOTO GRANDE (platos con imagen) --- */
+.card-big {
+    background: var(--paper);
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    box-shadow: 0 4px 14px rgba(58, 42, 29, 0.08);
+}
+
+.card-big img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.big-info {
+    padding: 18px 20px;
+}
+
+.big-header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 6px;
 }
-.big-category article .prod-title {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: var(--primary-color);
+
+.big-title {
     font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 1.3rem;
+    color: var(--espresso);
     margin: 0;
 }
-.big-category article .prod-price {
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: var(--secondary-color);
-    font-family: var(--font-body);
-}
-.big-category article .prod-desc {
-    font-size: 1rem;
-    color: #666;
-    line-height: 1.4;
-}
 
-
-
-
-.mid-category article {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 0;
-    border-bottom: 1px dashed #e0e0e0;
-}
-
-.mid-category article:last-child {
-    border-bottom: none;
-}
-
-
-
-
-.mid-category article .prod-title {
-    font-size: 1.05rem;
-    font-weight: 600;
-    color: var(--primary-color);
-    margin-bottom: 2px;
-}
-
-
-.mid-category article .prod-desc {
-     font-size: 0.85rem; 
-     color: #777; 
-     line-height: 1.3;
-}
-
-.mid-category article .prod-price {
-    font-weight: 700; 
-    color: var(--secondary); 
-    font-size: 1.05rem; 
-    margin-top: 5px; 
-    display: block;
-}
-
-.mid-category article img{
-    width: 80px;
-    height: 80px;
-    border-radius: 8px;
-    object-fit: cover;
-    flex-shrink: 0;
-    background-color: #eee;
-}
-
-/* NO-IMAGE CATEGORY (Refrescos, Cervezas, etc.) */
-.no-img-category {
-    padding: 15px;
-    background-color: #fff;
-}
-
-.no-img-category article {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 12px 5px;
-    border-bottom: 1px dashed #e0e0e0;
-}
-
-.no-img-category article:last-child {
-    border-bottom: none;
-}
-
-.no-img-category article .prod-title {
-    font-size: 1.05rem;
-    font-weight: 600;
-    color: var(--primary-color);
-    font-family: var(--font-heading);
-}
-
-.no-img-category article .prod-price {
-    font-size: 1.05rem;
+.big-price {
+    font-family: var(--font-mono);
     font-weight: 700;
-    color: var(--secondary-color);
-    white-space: nowrap;
-    margin-left: 10px;
-}
-
-.subcategory-title {
-    font-family: var(--font-heading);
     font-size: 1.05rem;
-    color: var(--secondary-color);
-    border-bottom: 1px solid var(--terciary-color);
-    padding: 10px 5px 6px;
-    margin: 18px 0 10px;
+    color: var(--rust-dark);
+    white-space: nowrap;
+}
+
+.big-desc {
+    font-size: 0.9rem;
+    color: var(--espresso-soft);
+    line-height: 1.5;
+    border-top: 1px dashed var(--line);
+    padding-top: 10px;
+    margin-top: 4px;
+}
+
+@media (min-width: 700px) {
+    .card-big img {
+        height: 380px;
+    }
+}
+
+/* --- TABLAS PARA COMPARTIR (board-card) --- */
+.board-card {
+    background: var(--cream-light);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 22px 24px;
+}
+
+.board-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.board-head .item-name {
+    font-size: 17px;
+}
+
+.board-head .item-desc {
+    margin-top: 6px;
+}
+
+.board-head .item-price {
+    font-size: 17px;
+}
+
+/* --- FOOTER --- */
+footer {
+    margin-top: 70px;
+    padding: 40px 0 60px;
+    text-align: center;
+    border-top: 1px solid var(--line);
+}
+
+footer p {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: .18em;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.big-category .subcategory-title:first-child,
-.mid-category .subcategory-title:first-child,
-.no-img-category .subcategory-title:first-child {
-    margin-top: 0;
-}
-
-.extras-note {
-    font-size: 0.8rem;
-    color: #999;
-    padding: 8px 5px;
-    font-style: italic;
-    border-top: 1px dashed #e0e0e0;
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
-
-/* NESTED DETAILS FOR CREPES */
-details details {
-    box-shadow: none;
-    margin: 10px 0;
-    background: transparent;
-}
-
-details summary.nested-summary {
-    background: #fff;
-    color: var(--secondary-color);
-    font-size: 1.2rem;
-    padding: 12px 15px;
-    border: 1px solid var(--terciary-color);
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-}
-
-details summary.nested-summary::after {
-    font-size: 1.3rem;
+    color: var(--espresso-soft);
+    margin: 0;
 }
